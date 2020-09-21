@@ -18,11 +18,18 @@ class CLI
         print_drinks(drinks)
         puts ""
         puts "Type a number listed to see more details or type 'exit' to exit"
+        puts ""
+        inp = gets.strip.downcase
+        while inp != 'exit' do 
+            drink = Drink.find_by_ingredient(@ingredient)[inp.to_i - 1]
+            API.get_drink_details(drink)
+        end
+
     end
 
     def print_drinks(dr)
         puts ""
-        puts "Here are your drink with #{@ingredient}"
+        puts "Here are your drinks with #{@ingredient}"
         puts ""
         dr.each.with_index(1) do | d, i |
             puts "#{i}. #{d.name}"
