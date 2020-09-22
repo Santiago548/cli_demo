@@ -8,7 +8,7 @@ class CLI
         puts ""
         puts "Welcome to Drink Finder!"
         puts ""
-        puts "Search for drink by entering an ingredient"
+        puts "Search for drinks by entering an ingredient"
         puts ""
         @ingredient = gets.strip.downcase
         puts ""

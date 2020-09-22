@@ -1,5 +1,5 @@
 # keeps track of our drinks
-#turn our responses into objects
+# turn our responses into objects
 # save all drinks created
 class Drink 
     attr_accessor :name, :drink_id, :ingredient
@@ -18,6 +18,5 @@ class Drink
 
     def self.find_by_ingredient(ingredient)
         @@all.select {|d| d.ingredient == ingredient }
-
     end 
 end 
